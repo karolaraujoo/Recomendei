@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylerecomendei.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>R E C O M E N D E I</h2>
+        <img src="logo.png" class="logo" alt="">
+        <a href="index.html">Sair</a>
+        <div class="thread">
+            <h2>Comprei a base da we Pink, meu rosto em poucos dias encheu de espinha. Parei o uso, até porque estava inflamado e não pode passar em cima.
+                Mas meu rosto estava muito feio, e com
+                Isso não quiz nem sair no FDS pois até com base estava péssimo..</h2>
+            <img class="img" src="img.jpg" alt="">
+            <button>mostrar respostas</button>
+            <div class="respostas">
+                <p>Nossaa, aconteceu o mesmo comigo...</p>
+                <hr>
+                <p>Na minha pele deu certo, pode ser alguma substancia ou reação alergica</p>
+                <hr>
+                <form>
+                    <textarea></textarea>
+                    <input class="enviar" type="submit" value="enviar" name="acao">
+                </form>
+            </div>
+        </div>
+        <div class="thread">
+            <h2>Tenho o cabelo bastante oleoso e senti que a máscara/shampoo limpa super bem o couro cabeludo. O produto dá aquela refrescada, sabe? Mas tudo isso, sem deixar o cabelo ressecado e também sem dar efeito rebote.</h2>
+            <img class="img" src="img2.jpg" alt="">
+            <button>mostrar respostas</button>
+            <div class="respostas">
+                <p>ele é maravilho!!</p>
+                <hr>
+                <form>
+                    <textarea></textarea>
+                    <input  class="enviar" type="submit" value="enviar" name="acao">
+                </form>
+            </div>
+        </div>
+        <div class="thread">
+            <h2>A textura é mais leve, fininha, então eles não são aqueles balms que duram horas intactos nos lábios. Mas como hidratante labial é um tipo de produto que costumo retocar com frequência, não é algo que me incomode.</h2>
+            <img class="img" src="img3.jpg" alt="">
+            <button>mostrar respostas</button>
+            <div class="respostas">
+                <p>Tem real gosto de fini, da vontade de comeeer</p>
+                <hr>
+                <p>achei grudento</p>
+                <hr>
+                <form>
+                    <textarea></textarea>
+                    <input  class="enviar" type="submit" value="enviar" name="acao">
+                </form>
+            </div>
+        </div>
+        
+    </div>
+
+    <style>
+        .respostas {
+            display: none;
+        }
+    </style>
+
+    <script>
+        let buttonsResposta = document.querySelectorAll('.thread button');
+
+        for (let i = 0; i < buttonsResposta.length; i++) {
+            buttonsResposta[i].addEventListener('click', ()=> {
+                let respostas = document.querySelectorAll('.respostas');
+                respostas[i].style.display = "block";
+            });
+        };
+
+        let forms = document.querySelectorAll('form');
+
+        for(let i = 0; i < forms.length; i++) {
+            forms[i].addEventListener('submit',(e)=>{
+                e.preventDefault();
+                let conteudo = document.querySelectorAll('textarea')[i];
+                forms[i].insertAdjacentHTML('beforebegin', '<p>'+conteudo.value+'</p>')
+                conteudo.value = "";    
+            });
+
+        };
+    </script>
+</body>
+</html>
